@@ -4,8 +4,8 @@ export default function Home(): JSX.Element {
     return (
         <>
             <Htag tag={"h1"}>Hello</Htag>
-            <Button appearance={'primary'}> OK </Button>
-            <Button appearance={'ghost'}> No </Button>
+            <Button appearance={'primary'} arrow='right'> OK </Button>
+            <Button appearance={'ghost'} arrow='down'> No </Button>
 
         </>
     );
