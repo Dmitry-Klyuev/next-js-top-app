@@ -1,4 +1,4 @@
-import {HTagProps} from "./HTagProps";
+import {HTagProps} from "./HTag.Props";
 import styles from './Htag.module.css';
 
 export const Htag = ({tag, children}: HTagProps): JSX.Element => {

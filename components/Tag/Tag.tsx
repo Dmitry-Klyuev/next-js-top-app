@@ -1,23 +1,24 @@
-import style from './Tag.module.css';
+import styles from './Tag.module.css';
 import {TagProps} from "./Tag.props";
 import cn from 'classnames';
+import {useState} from "react";
 
 
 export const Tag = ({children, size = 's', href, color, className, ...props}: TagProps): JSX.Element => {
     return (
-        <div className={cn(style.tag, className, {
-            [style.s]: size === 's',
-            [style.m]: size === 'm',
-            [style.ghost]: color === 'ghost',
-            [style.red]: color === 'red',
-            [style.grey]: color === 'grey',
-            [style.green]: color === 'green',
-            [style.primary]: color === 'primary',
+        <div className={cn(styles.tag, className, {
+            [styles.s]: size === 's',
+            [styles.m]: size === 'm',
+            [styles.ghost]: color === 'ghost',
+            [styles.red]: color === 'red',
+            [styles.grey]: color === 'grey',
+            [styles.green]: color === 'green',
+            [styles.primary]: color === 'primary',
         })}
              {...props}
         >
             {href
-                ? <a>{children}</a>
+                ? <a href={href}>{children}</a>
                 : <>{children}</>
             }
         </div>
