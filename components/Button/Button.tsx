@@ -1,7 +1,13 @@
 import styles from './Button.module.css';
-import {ButtonProps} from './Button.props';
 import cn from 'classnames';
 import Arrow from './arrow.svg';
+import {ButtonHTMLAttributes, DetailedHTMLProps, ReactNode} from "react";
+
+interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
+    children: ReactNode;
+    appearance: 'primary' | 'ghost';
+    arrow?: 'right' | 'down' | 'none';
+}
 
 export const Button = ({children, arrow='none', appearance, className, ...props}: ButtonProps): JSX.Element => {
     return (

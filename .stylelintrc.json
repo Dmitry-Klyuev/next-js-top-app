@@ -4,7 +4,7 @@
     "stylelint-order-config-standard"
   ],
   "plugins": [
-    "stylelint-order"
+    "configBasedir"
   ],
   "rules": {
     "indentation": ["tab"],

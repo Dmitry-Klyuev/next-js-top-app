@@ -1,18 +1,23 @@
-import {PProps} from "./P.props";
-import style from './P.module.css';
+import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
+import styles from './P.module.css'
 import cn from "classnames";
 
 
-export const P = ({size = 'm', children, className, ...props}: PProps): JSX.Element => {
+interface PProps extends DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+    children: ReactNode;
+    size?: 's' | "m" | 'l';
+}
+
+export const P = ({children, size = 'm', className, ...props}: PProps): JSX.Element => {
     return (
-        <>
-            <p className={cn(style.p, className, {
-                [style.s]: size === 's',
-                [style.m]: size === 'm',
-                [style.l]: size === 'l',
-            })}
-               {...props}
-            >{children}</p>
-        </>
+        <p className={cn(styles.p, className, {
+            [styles.s]: size === 's',
+            [styles.m]: size === 'm',
+            [styles.l]: size === 'l'
+        })}
+           {...props}
+        >
+            {children}
+        </p>
     );
-};
+}

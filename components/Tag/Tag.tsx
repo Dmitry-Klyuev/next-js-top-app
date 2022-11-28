@@ -1,10 +1,15 @@
 import styles from './Tag.module.css';
-import {TagProps} from "./Tag.props";
 import cn from 'classnames';
-import {useState} from "react";
+import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
 
+interface TagProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    size?: 's' | 'm';
+    children: ReactNode;
+    color?: 'ghost' | 'red' | 'grey' | 'green' | 'primary';
+    href?: string;
+}
 
-export const Tag = ({children, size = 's', href, color, className, ...props}: TagProps): JSX.Element => {
+export const Tag = ({children, size = 's', href, color = 'ghost', className, ...props}: TagProps): JSX.Element => {
     return (
         <div className={cn(styles.tag, className, {
             [styles.s]: size === 's',
