@@ -1,5 +1,5 @@
 import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
-import styles from './P.module.css'
+import styles from './P.module.css';
 import cn from "classnames";
 
 
@@ -20,4 +20,4 @@ export const P = ({children, size = 'm', className, ...props}: PProps): JSX.Elem
             {children}
         </p>
     );
-}
+};
